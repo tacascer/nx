@@ -19,7 +19,8 @@ const NODE_MISSING_ERR =
 const NPM_MISSING_ERR =
   'Nx requires npm to be available. To install NodeJS and NPM, see: https://nodejs.org/en/download/ .';
 
-const BATCH_SCRIPT_CONTENTS = `set path_to_root=%~dp0
+const BATCH_SCRIPT_CONTENTS = `@echo off
+set path_to_root=%~dp0
 WHERE node >nul 2>nul
 IF %ERRORLEVEL% NEQ 0 (ECHO ${NODE_MISSING_ERR}; EXIT 1)
 WHERE npm >nul 2>nul
